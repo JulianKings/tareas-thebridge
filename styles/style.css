@@ -1,0 +1,438 @@
+body, html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+}
+
+.content {
+    background-color: #e5e7eb;
+    color: black;
+    width: 100%;
+    min-height: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.header {
+    background-color: white;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 0 1rem rgb(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.header .header-title {
+    font-size: 3rem;
+    font-weight: bold;
+    font-family: 'italian', sans-serif;
+    color: #132544;
+}
+
+.header .menu-holder
+{
+    position: absolute;
+    top: 0;
+    left: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.header .menu-image-holder
+{
+    height: auto;
+    padding: 0.45rem 0.6rem;
+    border-radius: 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+}
+
+.header .menu-image-holder:hover
+{
+    background-color: rgba(117, 141, 182, 0.4);
+}
+
+.sidebarBackground {
+    background-color: rgb(0, 0, 0, 0.4);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.sidebarMenu {
+    background-color: rgb(228, 228, 228, 1);
+    box-shadow: 0.3rem 0.3em 0.5rem rgb(0, 0, 0, 0.1);
+    height: 100%;
+    width: 18rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebarMenu .menuHolder
+{
+    padding-top: 4rem;
+}
+
+.sidebarMenu .menuItem {
+    background-color: white;
+    border: 1px solid white;
+    text-align: left;
+    padding: 0.5rem 1rem;
+    margin: 0.8rem 1.2rem;
+    font-size: 1.2rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.sidebarMenu .menuItem:hover {
+    border-color: #132544;
+}
+
+.sidebarMenu .selected {
+    background-color: #132544;
+    border-color: #132544;
+    color: white;
+}
+
+.sidebarMenu .selected:hover {
+    background-color: #0b1933;
+    border-color: #0b1933;
+}
+
+.slide-in {
+    animation-duration: 0.8s;
+    animation-name: slideIn;
+}
+
+.slide-out {
+    animation-duration: 0.8s;
+    animation-name: slideOut;
+}
+
+@keyframes slideIn {
+    from {
+        left: -60%;
+    }
+    to {
+        left: 0%
+    }
+}
+
+@keyframes slideOut {
+    from {
+        left: 0%
+    }
+    to {
+        left: -60%;
+    }
+}
+
+.sidebarMenu .project-heading {
+    padding-top: 2rem;
+    padding-left: 1rem;
+}
+
+.sidebarMenu .append-project {
+    float: right;
+    padding-right: 1rem;
+}
+
+.sidebarMenu .append-project img {
+    transition: all 0.2s ease-in-out;
+}
+
+.sidebarMenu .append-project img:hover {
+    transform: scale(1.1);
+}
+
+.sidebarMenu .hr-item
+{
+    margin-bottom: 0.5rem;
+}
+
+.sidebarMenu .hr-item hr {
+    margin: 0.6rem 0.7rem;
+}
+
+.sidebarMenu .projectItem {
+    margin-top: 0;
+    padding-bottom: 0;
+    display: grid;
+    grid-template-columns: 1fr 3rem;
+}
+
+.sidebarMenu .projectItem .projectItem-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+.sidebarMenu .projectItem img {
+    transform: scale(0.9);
+}
+
+.sidebarMenu .projectItem img:hover {
+    transform: scale(1);
+}
+
+.main-content {
+    margin: 2.5rem 10%;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 0.4rem;
+    animation: showUp 0.8s ease;
+    box-shadow: 0.1rem 0.3em 0.6rem rgb(0, 0, 0, 0.2);
+}
+
+@keyframes showUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.main-content table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 0.4rem;
+    text-align: left;
+}
+
+.main-content table caption {
+    font-size: 2.5rem;
+    padding: 0.6rem 1rem;
+}
+
+.main-content .append-todo {
+    float: right;
+}
+
+.main-content .append-todo img {
+    transform: scale(0.9);
+    transition: all 0.4s ease-in-out;
+}
+
+.main-content .append-todo img:hover {
+    transform: scale(1);
+}
+
+.main-content table th.nameColumn, .main-content table td.nameColumn {
+    width: 55%;
+}
+
+.main-content table th {
+    background-color: rgb(229, 231, 235, 0.6);
+    border: 1px rgb(229, 231, 235, 0.6);
+    padding: 0.5rem 0rem;
+    font-size: 1.4rem;
+}
+
+.main-content table tr th:first-child { 
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    padding-left: 0.8rem;
+ }
+.main-content table th:last-child { 
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    padding-right: 0.8rem;
+ }
+
+ .main-content table td {
+    background-color: rgb(229, 231, 235, 0.25);
+    border: 1px rgb(229, 231, 235, 0.25);
+    padding: 0.4rem 0rem;
+    margin-bottom: 1rem;
+    animation: increaseOpacity 0.8s ease;
+    transition: all 0.3s ease-in-out;
+}
+
+@keyframes increaseOpacity {
+    0% {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.main-content table td img {
+    transform: scale(0.9);
+    margin: 0 0.05rem;
+}
+
+.main-content table td img:hover {
+    transform: scale(1);
+}
+
+.main-content table td:hover {
+    background-color: rgb(229, 231, 235, 0.35);
+    border: 1px rgb(229, 231, 235, 0.35);
+}
+
+.main-content table tr td:first-child { 
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    padding-left: 0.8rem;
+ }
+.main-content table tr td:last-child { 
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    padding-right: 0.8rem;
+ }
+
+ .main-content table td .low,  .main-content table td .medium,  .main-content table td .high {
+    width: fit-content;
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.4rem;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+ }
+
+ .main-content table td .low
+ {
+    background-color: green;
+ }
+
+ .main-content table td .medium
+ {
+    background-color: orangered;
+ }
+
+ .main-content table td .high
+ {
+    background-color: #500000;
+ }
+
+.footer {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    bottom: 0;
+    font-size: 0.9rem;
+    padding-bottom: 0.4rem;
+    padding-top: 0.4rem;
+    color: black;
+}
+
+#dialog-main {
+    background-color: white;
+    padding: 0;
+    border-radius: 0.4rem;
+    animation: showUp 0.8s ease;
+    box-shadow: 0.1rem 0.3em 0.6rem rgb(0, 0, 0, 0.2);
+    outline: none;
+    border: none;
+}
+
+#dialog-main .dialog-title {
+    background-color: #132544;
+    color: white;
+    font-size: 1.4rem;
+    margin: 0;
+    padding: 0.6rem 1rem;
+}
+
+#dialog-main .dialog-content {
+    padding: 1rem;
+    padding-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    width: 45ch;
+}
+
+#dialog-main .dialog-content label {
+    padding-top: 0.7rem;
+}
+
+#dialog-main .dialog-content input, #dialog-main .dialog-content select, 
+#dialog-main .dialog-content textarea {
+    padding: 0.35rem;
+    border: 1px solid rgb(0, 0, 0, 0.4);
+    border-radius: 0.5rem;
+}
+
+#dialog-main .dialog-content input:focus, #dialog-main .dialog-content select:focus,
+#dialog-main .dialog-content textarea:focus {
+    outline: none;
+    border: 1px solid #0b1933;
+}
+
+#dialog-main .dialog-content input.error {
+    border: 1px solid #500000;
+}
+
+#dialog-main .dialog-content .input-error {
+    color: #500000;
+}
+
+#dialog-main .project-buttons {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 1rem;
+    padding-bottom: 0.4rem;
+}
+
+#dialog-main .project-buttons button {
+    padding: 0.35rem 0.5rem;
+    margin-left: 0.75rem;
+    border: 0;
+    border-radius: 0.4rem;
+    font-size: 1.3rem;
+    box-shadow: 0.1rem 0.1em 0.3rem rgb(0, 0, 0, 0.2);
+    transition: all 0.4s ease-in-out;
+}
+
+#dialog-main .project-buttons button:hover {
+    transform: scale(1.1);
+}
+
+#dialog-main .project-buttons .send-button {
+    background-color: #102244;
+    color: white;
+}
+
+#dialog-main .project-buttons .send-button:hover {
+    background-color: #0a1630;
+}
+
+#dialog-main .project-buttons .send-button:active {
+    background-color: #050e1f;
+}
+
+#dialog-main .project-buttons .cancel-button:hover {
+    background-color: #dfdfdf;
+}
+
+#dialog-main .project-buttons .cancel-button:active {
+    background-color: #cecece;
+}
